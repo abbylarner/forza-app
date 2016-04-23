@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="<%= env === 'development' ? '/styles/main.scss.css' : '/styles/main.scss.min.css?'+version %>" />
+
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<div id="prList">
+		</div>
+		<!-- <%
+			for(var i = 0; i < prInfo.length; i++){ %>
+				<h3><%= prInfo[i].liftName %></h3> 
+			<% } %> -->
+
+			
+		<a href="/prs/create">Add New Pr</a>
+		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
+	</body>
+</html>
