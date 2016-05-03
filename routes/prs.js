@@ -1,10 +1,8 @@
 let express = require('express');
 let router = express.Router();
-var $ = require('jquery');
 
 //Requires the Pr model
 let PrModel = require('../models/Pr');
-
 let loggedIn = require('../lib/middleware/logged-in');
 
 

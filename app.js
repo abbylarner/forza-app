@@ -54,7 +54,7 @@ passportSetup(app);
 let api = require('./routes/api1');
 let index = require('./routes/index');
 let auth = require('./routes/auth');
-let prs = require('./routes/prs')
+let prs = require('./routes/prs');
 
 /* 2. ROUTES are added here */
 

@@ -1,18 +1,18 @@
-var $ = require("jquery");
-var moment = require("moment");
+var $ = require('jquery');
+var moment = require('moment');
 
 $(document).ready(function(){
 	$.ajax({
-	  url: '/api/v1/Pr',
+	  url: '/api/v1/Pr'
 	})
 	.done(function(data) {
 	  for(var i = 0; i < data.length; i++){
 	  	var liftName = data[i].liftName;
 	  	var liftDate = data[i].createdAt;
-	  	var liftDateFormatted = moment(liftDate).format("MMM Do YYYY");
-	  	var liftId = data[i].id
+	  	var liftDateFormatted = moment(liftDate).format('MMM Do YYYY');
+	  	var liftId = data[i].id;
 	  	//List All PR's
-	  	$('#prList').append('<h3>' + liftName + '</h3>' + '<p>' + liftDateFormatted + '</p>'+ '<a href="" data-id="' + liftId + '">Update</a>')
+	  	$('#prList').append('<h3><a href="' + liftName + '</a></h3>' + '<p>' + liftDateFormatted + '</p>'+ '<a href="" data-id="' + liftId + '">Update</a>');
 
 
 	  	//Check if PR Already exists
@@ -26,6 +26,6 @@ $(document).ready(function(){
 	  }
 	})
 	.fail(function() {
-	  console.log("Ajax failed to fetch data");
-	})
+	  console.log('Ajax failed to fetch data.');
+	});
 });
