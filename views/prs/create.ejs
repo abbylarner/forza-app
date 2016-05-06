@@ -8,14 +8,14 @@
 	<body>
 		<h1><%= title %></h1>
 		<p><%- error.display('liftName') %></p>
-		<p><%- error.display('liftWeightLbs') %></p>
+		<p><%- error.display('liftWeight') %></p>
 		<p><%- error.display('prName') %></p>
 		<p><%- error.display('default') %></p>
 		<form method="POST" action="/prs/create">
 			<input type="text" name="liftName" placeholder="Lift Name" value="<%= prev.display('body', 'liftName') %>" id="liftName">
-			<input type="number" name="liftWeightLbs" placeholder="Lift Weight" value="<%= prev.display('body', 'liftWeightLbs') %>" id="liftWeight">
-			<!-- <input type="radio" name="liftMetric" value="pounds" checked> Pounds
-			<input type="radio" name="liftMetric" value="kilograms" > Kilograms -->
+			<input type="number" name="liftWeight" placeholder="Lift Weight" value="<%= prev.display('body', 'liftWeight') %>" id="liftWeight">
+			<input type="radio" name="liftMetric" value="pounds" checked> Pounds
+			<input type="radio" name="liftMetric" value="kilograms" > Kilograms
 			<input type="submit" value="Add PR" value="addPr">
 		</form>
 		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>

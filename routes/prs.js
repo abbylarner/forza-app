@@ -29,17 +29,25 @@ router.post('/create', loggedIn, function(req,res){
 			message: 'Please enter a lift name.'
 		}, 'liftName');
 	}
-	if(!req.body.liftWeightLbs){
+	if(!req.body.liftWeight){
 		res.error.add({
 			status: 400,
 			message: 'Please enter a lift weight.'
-		}, 'liftWeightLbs');
+		}, 'liftWeight');
+	}
+
+	if(!req.body.liftMetric){
+		res.error.add({
+			status: 400,
+			message: 'Please select a lift metric.'
+		}, 'liftMetric');
 	}
 
 	if(!res.error.send('/prs/create')){
 		var pr = new PrModel({
 			liftName: req.body.liftName,
-			liftWeightLbs: req.body.liftWeightLbs,
+			liftWeight: req.body.liftWeight,
+			liftMetric: req.body.liftMetric,
 			userId: req.user.id
 		});
 

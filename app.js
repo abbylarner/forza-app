@@ -61,7 +61,7 @@ let prs = require('./routes/prs');
 app.use('/api/v1/', api);
 app.use('/auth', auth);
 app.use('/prs', prs);
-app.use('/', index);
+app.use('*', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
